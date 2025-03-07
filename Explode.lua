@@ -2,27 +2,42 @@
 
 -- Functions
 
-function Explode (string, delim)
-    local table = 
+function Explode (input, delim)
+    local result = {}
     local element = ""
-    for i = 1, #string, 1 do
-        if string[i] == delim then
-            table.add(element) 
+    local char = ""
+    for i = 1, #input, 1 do
+        char = input:sub(i, i)
+        if char == delim then
+            if element ~= "" then
+            table.insert(result, element)
+            end
             element = ""
+        else
+        element = element .. char
         end
-
-        element = element + string[i] -- likely going to be an issue (string[i])
     end
-    return table
+    if element ~= "" then
+        table.insert(result, element)
+    end
+    return result
 end
 
--- Program 
+-- Program
 
-local string = "S.T.E.V.E.N"
+local input = "S.T.E.V...E.N..."
 local delim = "."
 
-local table = Explode(string, delim)
+local resultTable = Explode(input, delim) -- Use Explode function
 
-for i = 1, #table, 1 do
-    print(table[i])
+for i, value in ipairs(resultTable) do    -- Print each element from resultTable
+    print(value)
 end
+
+local resultingString = ""
+
+for i, value in ipairs(resultTable) do     -- Create string from each value of resultTable
+    resultingString = resultingString .. value
+end
+
+print(resultingString)
