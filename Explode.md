@@ -2,7 +2,7 @@
 
 ## Inital attempt (with errors)
 
-```Lua
+'''Lua
 function Explode (string, delim)
     local table 
     local element = ""
@@ -16,7 +16,7 @@ function Explode (string, delim)
     end
     return table
 end
-```
+'''
 
 ## Mistakes made
 
