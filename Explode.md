@@ -30,7 +30,7 @@ end
     Params: 1st param = lower bound index of substring, 2nd param = upperbound index of substring.
     `sub(i, i)` extracts a substring from i to i (a single character)
 
-*   `table.add(element)` is inproper, need to use table libary, and pass in both elements. E.g. `table.add(tableName, element)`
+*   `table.add(element)` is inproper, need to use table libary, and pass in both elements. E.g. `table.insert(tableName, element)`
 
 *   Cannot concatenate local variables with `+`.
     Do, `element = element .. char`
@@ -48,10 +48,10 @@ function Explode (input, delim) -- o(n) runtime, each element of the input is vi
             if element ~= delim then   -- Logic fix to not insert blank values (s.t...ven...)
                 table.insert(result, element) 
             end
-            table.add(result, element) 
             element = ""
+        else
+            element = element .. char
         end
-        element = element .. char
     end
     if element ~= delim then   -- Note: ~= is the Lua equivalent to != (not equal to)
         table.insert(result, element) 
