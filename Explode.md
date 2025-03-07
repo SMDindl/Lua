@@ -20,16 +20,16 @@ end
 
 ## Mistakes made
 
-*   Varible `local table` not initalized, leading to table being nil
-    Do, `local table = {}`
+*   Varible `local table` not initalized, leading to table being nil.
+    Do, `local table = {}`.
 
-*   Varible `string` cannot have it`s chars accessed by n-th term. E.g. `string[i]`
-    Do, `local char = string:sub(i, i)`
-    Params: 1st param = starting index of substring, 2nd param = econd index of substring
+*   Varible `string` cannot have its chars `accessed by n-th term. E.g. `string[i]`
+    Do, `local char = string:sub(i, i)`.
+    Params: 1st param = lower bound index of substring, 2nd param = upperbound index of substring.
     `sub(i, i)` extracts a substring from i to i (a single character)
           
 
-*   Cannot concatenate local variables with `+`
+*   Cannot concatenate local variables with `+`.
     Do, `element = element .. char`
 
 
