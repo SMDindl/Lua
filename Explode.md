@@ -1,6 +1,6 @@
 # Lua Explode function - Learning
 
-## Inital attempt, with errors:
+## Inital attempt (with errors)
 
 ```
 function Explode (string, delim)
