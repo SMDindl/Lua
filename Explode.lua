@@ -41,3 +41,13 @@ for i, value in ipairs(resultTable) do     -- Create string from each value of r
 end
 
 print(resultingString)
+
+
+input = "I .AM .A .........CHILL ......MAN!..........."
+resultingString = ""
+resultTable = Explode(input, delim)
+for i, value in ipairs(resultTable) do  
+    resultingString = resultingString .. value
+end
+
+print(resultingString)
